@@ -1,9 +1,13 @@
 package pom.Equipo2.Base;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class SeleniumBasePage {
@@ -90,5 +94,12 @@ public class SeleniumBasePage {
     public String getTitle(){
         return driver.getTitle();
     }
+
+    public void sendEnter(By locator){driver.findElement(locator).sendKeys(Keys.ENTER);}
+
+    public void exwait(By locator){
+        WebDriverWait exwait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        exwait.until(ExpectedConditions.elementToBeClickable(locator));}
+
 
 }
