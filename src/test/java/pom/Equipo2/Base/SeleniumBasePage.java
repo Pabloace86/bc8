@@ -1,9 +1,6 @@
 package pom.Equipo2.Base;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -100,6 +97,12 @@ public class SeleniumBasePage {
     public void exwait(By locator){
         WebDriverWait exwait = new WebDriverWait(driver, Duration.ofSeconds(5));
         exwait.until(ExpectedConditions.elementToBeClickable(locator));}
+
+    public void scrollear (By locator){
+        WebElement scroll = driver.findElement(locator);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", scroll);
+    }
 
 
 }

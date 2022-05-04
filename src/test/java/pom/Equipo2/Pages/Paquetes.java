@@ -66,8 +66,8 @@ public class Paquetes extends SeleniumBasePage {
         public void escribirOrigen(){type("Chile",origen);}
         public void esperarresultado(){click(resultado);}
         public void escribirDestino(){type(" Buenos Aires ", destino);}
-        public void seleccionarIda(){click(fechaIda10del05 );}
-        public void seleccionarFechaVuelta(){click(fechaVuelta20del05);}
+        public void seleccionarIda(){click( contenedor10del05 );}
+        public void seleccionarFechaVuelta(){click(contenedor20del05);}
         public void seleccionarOpcionesAvanzadas(){click(mostrarOpcionesAvanzadas);}
         public void seleccionarAlojamientoOtraCiudad(){click(checkboxAlojamientoOtraCiudad);}
         public void seleccionarDestino2(){type("Mar del Plata, Buenos Aires, Argentina",destinoDos);}
