@@ -11,10 +11,19 @@ public class SearchResultPage extends SeleniumBase {
         super(driver);
     }
 
-    By linkCats = By.xpath("(//h3[@class='LC20lb MBeuO DKV0Md'])[1]");
+    By primerLink = By.xpath("//div[@class=\"s6JM6d\"]");
+            //("(//h3[@class=\"LC20lb MBeuO DKV0Md\"])[5]");
 
-    public void validarPalabraEnPrimerLink(String palabra){
-        String link = getText(linkCats);
-        Assert.assertEquals("cats",link.contains(palabra));
+    boolean result= false;
+    public void validarPrimerLink(String string){
+        scrollear(primerLink);
+        WebElement link= findElement(primerLink);
+        if(link.getText().contains(string)){
+            result=true;
+        }
+        Assert.assertTrue(result);
+    }
+    public void selectlink1() {
+        click(primerLink);
     }
 }

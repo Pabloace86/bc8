@@ -2,6 +2,7 @@ package automationcraft.engine.selenium;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -98,6 +99,14 @@ public class SeleniumBase {
     public String getTitle(){
         return driver.getTitle();
     }
+
+
+    public void scrollear (By locator){
+        WebElement scroll = driver.findElement(locator);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", scroll);
+    }
+
 
 
 

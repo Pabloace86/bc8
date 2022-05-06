@@ -12,7 +12,9 @@ public class GoogleHomePage extends SeleniumBase {
     //Atributos de la pagina
     String URLHOME = "http://www.google.com";
     By searchBox = By.name("q");
-    By bntK = By.name("bntK");
+    By bntK = By.xpath("(//input[@class=\"gNO89b\"])[2]");
+    By esperar= By.xpath("//div[@class=\"o3j99 ikrT4e om7nvf\"]");
+
 
     //funcionalidad
     public void irAGoogleHome(){
@@ -26,6 +28,8 @@ public class GoogleHomePage extends SeleniumBase {
     public void clickearBtnBusqueda(){
         click(bntK);
     }
+
+    public void esperarResultado(){click(esperar);}
 
 
 }
